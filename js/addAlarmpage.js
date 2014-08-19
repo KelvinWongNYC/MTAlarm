@@ -49,7 +49,7 @@ $(document).on('ready', function() {
 							timeAdjustment:timeAdjustment,
 						}, {
 							success:function(object) {
-								console.log("Saved object");
+								document.location.href='index.html';
 								/*doAlert("Tip Saved!", function() {
 									document.location.href='index.html';
 								});*/
