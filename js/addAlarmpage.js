@@ -15,7 +15,8 @@ $(document).on('ready', function() {
 				var alarmRepeat = $("#alarmRepeat").val(alarm.attributes.alarmRepeat);
 				var subwayRoute = $("#subwayRoute").val(alarm.attributes.subwayRoute);
 				var timeAdjustment = $("#timeAdjustment").val(alarm.attributes.timeAdjustment);
-				var addTipBtn = $("#addTipBtn").val("Save")
+				var addTipBtn = $("#addTipBtn").val("Save Changes")
+				var Delete = $("#deleteButton").val("Delete Alarm")
 			}
 			});
 };		
@@ -29,7 +30,6 @@ $(document).on('ready', function() {
 				else {
 				  // There's probably nothing that will go in here
 				}
-
 	    $("#addAlarmform").on("submit", function(e) {
 			e.preventDefault();
 			//get values
