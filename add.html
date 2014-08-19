@@ -1,135 +1,137 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script src="lib/parse/parse-1.1.2.min.js"></script>
-<script src="js/addAlarmpage.js"></script>
-<link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-<script src="js/alarm_test.js"></script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="www.frebsite.nl" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</head>
+		<title>MTAlarm</title>
 
-<body>
+		<link type="text/css" rel="stylesheet" href="jQtest/demo/css/demo.css" />
+		<link type="text/css" rel="stylesheet" href="jQtest/src/css/jquery.mmenu.css" />
 
-	<div class="navbar">
-		<div class="navbar-inner">
-			<div class="container">
-
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</a>
-
-				<!-- Be sure to leave the brand out there if you want it shown -->
-				<a class="brand" href="index.html">MTAlarm</a>
-
-				<div class="nav-collapse">
-					<ul class="nav">
-						<li><a href="index.html">Home</a></li>
-						<li class="active"><a href="add.html">Add Alarm</a></li>
-						<li><a href="serviceStatus.html">Service Status</a></li>
-						<li><a href="subwayMap.html">Subway Map</a></li> 
-						
-					</ul>
-				</div>
-
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="jQtest/src/js/jquery.mmenu.min.js"></script>
+		<script src="lib/parse/parse-1.1.2.min.js"></script>
+		<script src="js/indexPage.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('nav#menu').mmenu();
+			});
+		</script>
+	</head>
+	<body>
+		<div id="page">
+			<div class="header">
+				<a href="#"></a>
+				Add an Alarm
 			</div>
+			<div class="content">
+				<form id="addAlarmform">	
+					<label for="alarmName">Alarm Name</label>
+						<input type="text" id = "alarmName" name="Alarmname">
+					
+					<label for="alarmTime">Alarm Time</label>
+						<input type="time" id="alarmTime">
+
+					<div data-role="fieldcontain">
+						<label for="alarmRepeat">Repeat</label>
+						<select name="train" id="alarmRepeat" data-native-menu="false" multiple>
+							<option value="Sunday">Sunday</option>
+							<option value="Monday">Monday</option>
+							<option value="Tuesday">Tuesday</option>
+							<option value="Wednesday">Wednesday</option>
+							<option value="Thursday">Thursday</option>
+							<option value="Friday">Friday</option>
+							<option value="Saturday">Saturday</option>
+						</select>
+					</div>
+
+					<div data-role="fieldcontain">
+						<label for="subwayRoute">Route</label>
+						<select id = "subwayRoute" multiple>
+							<option placeholder disabled></option>
+
+						  <optgroup label="Broadway / 7 Avenue">
+						    <option value="1">1</option>
+						    <option value="2">2</option>
+						    <option value="3">3</option>
+						  </optgroup>
+
+						  <optgroup label="Lexington Avenue">
+						    <option value="4">4</option>
+						    <option value="5">5</option>
+						    <option value="6">6</option>
+						  </optgroup>
+
+							<optgroup label="Flushing">
+						    <option value="7">7</option>
+						    </optgroup>
+
+						   <optgroup label="8 Avenue">
+						    <option value="A">A</option>
+						    <option value="C">C</option>
+						    <option value="E">E</option>
+						   </optgroup>
+
+						   <optgroup label="6 Avenue">
+						    <option value="B">B</option>
+						    <option value="D">D</option>
+						    <option value="F">F</option>
+						    <option value="M">M</option>
+						   </optgroup>
+
+						   <optgroup label="Brooklyn-Queens Crosstown">
+						    <option value="G">G</option>
+						   </optgroup>
+
+						   <optgroup label="Nassau Street">
+						    <option value="J">J</option>
+						    <option value="Z">Z</option>
+						   </optgroup>
+						   
+						   <optgroup label="14 Street - Canarsie">
+						   	<option value="L">L</option>
+						   </optgroup>
+
+						    <optgroup label="Broadway">
+							    <option value="N">N</option>
+							    <option value="Q">Q</option>
+							    <option value="R">R</option>
+							</optgroup>					
+						</select>
+					</div>
+
+					<label for="timeAdjustment">Set Back Time for Delays</label>
+					<input type="number"  placeholder="Minutes" min="1" id = "timeAdjustment">
+					<input type="submit" class="btn btn-block btn-primary" value="Add" id="addTipBtn">
+				</form>
+			</div>
+			<nav id="menu">
+				<ul>
+					<li><a href="jQtest/demo/index.html">Home</a></li>
+					<li><a href="add.html">Add an Alarm</a></li>
+					<li><a href="serviceStatus.html">Service Status</a></li>
+					<li><a href="subwayMap.html">Subway Map</a></li>
+					<li><a href="#">About Us</a>
+						<ul>
+							<li><a href="#about/history">History</a></li>
+							<li><a href="#about/team">The team</a>
+								<ul>
+									<li><a href="#about/team/management">Management</a></li>
+									<li><a href="#about/team/sales">Sales</a></li>
+									<li><a href="#about/team/development">Development</a></li>
+								</ul>
+							</li>
+							<li><a href="#about/address">Our address</a></li>
+						</ul>
+					</li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>		
 		</div>
-	</div>
-
-
-
-<div class="container" align="center">
-	<form id="addAlarmform">	
-
-		<label for="alarmName">Alarm Name</label>
-		<input type="text" id = "alarmName" name="Alarmname">
-
-		
-			<label for="alarmTime">Alarm Time</label>
-			<input type="time" id="alarmTime">
-
-	<div data-role="fieldcontain">
-			<label for="alarmRepeat">Repeat</label>
-			<select name="train" id="alarmRepeat" data-native-menu="false" multiple>
-				<option value="Sunday">Sunday</option>
-				<option value="Monday">Monday</option>
-				<option value="Tuesday">Tuesday</option>
-				<option value="Wednesday">Wednesday</option>
-				<option value="Thursday">Thursday</option>
-				<option value="Friday">Friday</option>
-				<option value="Saturday">Saturday</option>
-			</select>
-	</div>
-
-	<div data-role="fieldcontain">
-		<label for="subwayRoute">Route</label>
-		<select id = "subwayRoute" multiple>
-
-			<option placeholder disabled></option>
-
-		  <optgroup label="Broadway / 7 Avenue">
-		    <option value="1">1</option>
-		    <option value="2">2</option>
-		    <option value="3">3</option>
-		  </optgroup>
-
-		  <optgroup label="Lexington Avenue">
-		    <option value="4">4</option>
-		    <option value="5">5</option>
-		    <option value="6">6</option>
-		   </optgroup>
-
-			<optgroup label="Flushing">
-		    <option value="7">7</option>
-		    </optgroup>
-
-		   <optgroup label="8 Avenue">
-		    <option value="A">A</option>
-		    <option value="C">C</option>
-		    <option value="E">E</option>
-		    </optgroup>
-
-		    <optgroup label="6 Avenue">
-		    <option value="B">B</option>
-		    <option value="D">D</option>
-		    <option value="F">F</option>
-		    <option value="M">M</option>
-		    </optgroup>
-
-		     <optgroup label="Brooklyn-Queens Crosstown">
-		    <option value="G">G</option>
-		    </optgroup>
-
-		    <optgroup label="Nassau Street">
-		    <option value="J">J</option>
-		    <option value="Z">Z</option>
-		    </optgroup>
-		   
-		   <optgroup label="14 Street - Canarsie">
-		   	<option value="L">L</option>
-		   	</optgroup>
-
-		    <optgroup label="Broadway">
-			    <option value="N">N</option>
-			    <option value="Q">Q</option>
-			    <option value="R">R</option>
-			</optgroup>
-
-		    
-
-			</select>
-			<label for="timeAdjustment">Set Back Time for Delays</label>
-			<input type="number"  placeholder="Minutes" min="1" id = "timeAdjustment">
-			<input type="submit" class="btn btn-block btn-primary" value="Add" id="addTipBtn">
-</form>
-	</div>
-
-	<script src="lib/jquery/jquery-1.8.2.min.js"></script>
-	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-
-</body>
+		<script src="lib/jquery/jquery-1.8.2.min.js"></script>
+		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	</body>
 </html>

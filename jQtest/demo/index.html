@@ -4,14 +4,18 @@
 		<meta charset="utf-8" />
 		<meta name="author" content="www.frebsite.nl" />
 		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>jQuery.mmenu demo</title>
+		<title>MTAlarm</title>
 
 		<link type="text/css" rel="stylesheet" href="css/demo.css" />
 		<link type="text/css" rel="stylesheet" href="../src/css/jquery.mmenu.css" />
 
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" src="../src/js/jquery.mmenu.min.js"></script>
+		<script src="lib/parse/parse-1.1.2.min.js"></script>
+		<script src="js/indexPage.js"></script>
+		<script src="js/alarm_test.js"></script>
 		<script type="text/javascript">
 			$(function() {
 				$('nav#menu').mmenu();
@@ -22,17 +26,28 @@
 		<div id="page">
 			<div class="header">
 				<a href="#menu"></a>
-				Demo
+				MTAlarm
 			</div>
 			<div class="content">
-				<p><strong>This is a demo.</strong><br />
-					Click the menu icon to open the menu.</p>
-				<p>For more demos, a tutorial, documentation and support, please visit <a href="http://mmenu.frebsite.nl" target="_blank">mmenu.frebsite.nl</a></p>
+				<div class="container">
+
+				<iframe width= "200" height="205" frameborder="no" scrolling="no" 
+				src="../../currentTime.html"></iframe>
+				</div>
+
+				<div id="placeToPutAlarm" align="center">
+				</div>				
+
+				<a href="../../add.html" class="btn btn-block">Add Alarm</a>
+			</div>
 			</div>
 			<nav id="menu">
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#about">About us</a>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="../../add.html">Add an Alarm</a></li>
+					<li><a href="../../serviceStatus.html">Service Status</a></li>
+					<li><a href="../../subwayMap.html">Subway Map</a></li>
+					<li><a href="#">About Us</a>
 						<ul>
 							<li><a href="#about/history">History</a></li>
 							<li><a href="#about/team">The team</a>
