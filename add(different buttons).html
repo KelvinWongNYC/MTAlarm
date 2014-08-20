@@ -34,7 +34,6 @@
 						<li class="active"><a href="add.html">Add Alarm</a></li>
 						<li><a href="serviceStatus.html">Service Status</a></li>
 						<li><a href="subwayMap.html">Subway Map</a></li> 
-						<li><a href="edit.html">Edit</a></li>
 						
 					</ul>
 				</div>
@@ -127,10 +126,40 @@
 			</select>
 			<label for="timeAdjustment">Set Back Time for Delays</label>
 			<input type="number"  placeholder="Minutes" min="1" id = "timeAdjustment">
-
 			
-			<input type="submit" class="btn btn-block btn-primary" value="Add" id="addTipBtn">
-		
+
+
+			<script type="text/javascript">
+			function getParameterByName(name) {
+		    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+		    return match && decodeURIComponent(match[1].replace(/\+/g, ' ')); 
+			};		
+
+			function myFunction() {
+				var alarmId = getParameterByName('id');
+				// Editing an existing alarm
+				if (alarmId) {
+				  document.write("WHYYYYYYYY")
+				  var btn = document.createElement("BUTTON");
+				  var btntxt = document.createTextNode("Save changes!")
+				  btn.appendChild(btntxt);
+				  document.body.appendChild(btn);
+				}
+				// Just adding a new alarm
+				else {
+				  document.write("WHYYYYYYYYNOTTTTTT")
+				  var btn = document.createElement("BUTTON");
+				  var btntxt = document.createTextNode("Create Alarm!")
+				  btn.appendChild(btntxt);
+				  document.body.appendChild(btn);
+				}
+			}
+			</script>
+			<script type="text/javascript">
+				myFunction();
+			</script>
+			<!-- <input type="submit" class="btn btn-block btn-primary" value="Add" id="addTipBtn">
+			<input type="delete" class="btn btn-block btn-danger" value="Cancel" id="deleteButton"> -->
 </form>
 	</div>
 

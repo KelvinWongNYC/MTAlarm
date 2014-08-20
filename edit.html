@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="lib/parse/parse-1.1.2.min.js"></script>
-<script src="js/addAlarmpage.js"></script>
+<script src="js/editAlarm.js"></script>
 <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 <script src="js/alarm_test.js"></script>
@@ -31,10 +31,10 @@
 				<div class="nav-collapse">
 					<ul class="nav">
 						<li><a href="index.html">Home</a></li>
-						<li class="active"><a href="add.html">Add Alarm</a></li>
+						<li><a href="add.html">Add Alarm</a></li>
 						<li><a href="serviceStatus.html">Service Status</a></li>
 						<li><a href="subwayMap.html">Subway Map</a></li> 
-						<li><a href="edit.html">Edit</a></li>
+						<li class="active"><a href="edit.html">Edit</a></li>
 						
 					</ul>
 				</div>
@@ -129,8 +129,8 @@
 			<input type="number"  placeholder="Minutes" min="1" id = "timeAdjustment">
 
 			
-			<input type="submit" class="btn btn-block btn-primary" value="Add" id="addTipBtn">
-		
+			<input type="submit" class="btn btn-block btn-primary" value="Save Changes" id="addTipBtn" >
+			<input type="delete" class="btn btn-block btn-danger" value="Delete Alarm" id="deleteButton"> 
 </form>
 	</div>
 

@@ -9,7 +9,7 @@ query.find({
 
 		alarms.forEach(function(alarm) {
 	/*What should I add after "add.html?"*/
-		$("#placeToPutAlarm").append('<h1><a href="add.html?id=' + alarm.id + '">'  + alarm.attributes.alarmName + '</a></h1>' + 
+		$("#placeToPutAlarm").append('<h1><a href="edit.html?id=' + alarm.id + '">'  + alarm.attributes.alarmName + '</a></h1>' + 
 			'<p>' + '<h2>' + alarm.attributes.alarmTime  + '</h2>' +
 					'<br>' + alarm.attributes.alarmRepeat + 
 					'<br>' + alarm.attributes.subwayRoute + 

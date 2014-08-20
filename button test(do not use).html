@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">Click the button to make a BUTTON element.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction()
+{
+var btn=document.createElement("BUTTON");
+document.body.appendChild(btn);
+}
+</script>
+
+</body>
+</html>
+
+
+-------
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to trigger a function.</p>
+
+<button onclick="myFunction()" value="mybutton" >Click me</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Hello World";
+
+document.getElementById("demo").innerHTML = button.value;
+}
+</script>
+
+</body>
+</html>
