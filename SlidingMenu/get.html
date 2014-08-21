@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="lib/parse/parse-1.1.2.min.js"></script>
+<script src="lib/parse/js/main.js"></script>
+<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+<script src="js/alarm_test.js"></script>
+<script src="lib/jquery_mobile/jquery.mobile-1.4.3.min.js"></script>
+
+</head>
+
+<!-- map specific -->
+<link rel="stylesheet" href="js/leaflet/leaflet.css" />
+<script src="js/leaflet/leaflet.js"></script>
+<style>
+#map { height: 250px; }
+</style>
+</head>
+
+<body>
+
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</a>
+
+				<!-- Be sure to leave the brand out there if you want it shown -->
+				<a class="brand" href="#">CowTipLine</a>
+
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="add.html">Add Tip</a></li>
+						<li class="active"><a href="get.html">Get Tips</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+
+		<script src="js/serviceStatus.js"></script>
+
+		
+		<div id="tipdisplay"></div>
+		<div id="map"></div>
+
+	</div>
+
+	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	
+</body>
+</html>
