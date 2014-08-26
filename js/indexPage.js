@@ -12,14 +12,17 @@ query.find({
 		$("#placeToPutAlarm").append('<h1><a href="edit.html?id=' + alarm.id + '">'  + alarm.attributes.alarmName + '</a></h1>' + 
 			'<p>' + '<h2>' + alarm.attributes.alarmTime  + '</h2>' +
 					'<br>' + alarm.attributes.alarmRepeat + 
-					'<br>' + alarm.attributes.subwayRoute + 
-					'<br>' + alarm.attributes.timeAdjustment + 
+					'<br><h1>' + 'Subway Routes ' + alarm.attributes.subwayRoute + 
+					'<br></h1>' + alarm.attributes.timeAdjustment + '<br>---------' +
 					'</p>');
+		console.log(alarm.attributes.subwayRoute)
+
 		});
 	},
 	error: function(error) {
 		alert("Error: " + error.code + " " + error.message);
 	}
+
 /*What was the function & if/else statement do I need here? 
 	var query = new Parse.Query(TipObject);
 	query.get({

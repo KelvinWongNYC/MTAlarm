@@ -16,8 +16,38 @@ $(document).on('ready', function() {
 				var subwayRoute = $("#subwayRoute").val(alarm.attributes.subwayRoute);
 				var timeAdjustment = $("#timeAdjustment").val(alarm.attributes.timeAdjustment);
 				var addTipBtn = $("#addTipBtn").val("Save")
-			}
-			});
+			}});
+
+/* DELETE ALARM
+query.get(alarmId, {
+  success: function(myObj) {
+    // The object was retrieved successfully.
+    myObj.destroy({});
+  },
+  error: function(object, error) {
+    // The object was not retrieved successfully.
+    // error is a Parse.Error with an error code and description.
+  }
+});	
+*/ 
+
+/* EDIT ALARM
+
+			query.find({
+  success: function(results) {
+    results[0].save({alarmName: "whateve"}),
+    results[0].save({alarmTime: "11:00"})
+
+  },
+
+  error: function(error) {
+    // error is an instance of Parse.Error.
+  }
+});
+*/
+
+
+
 };		
 			var alarmId = getParameterByName('id');
 				// Editing an existing alarm
@@ -30,60 +60,7 @@ $(document).on('ready', function() {
 				}
 });
 
-  $("#addAlarmform").on("submit", function(e) {
-			e.preventDefault();
-			//get values
-			var alarmId = getParameterByName('id');
-			if (alarmId) {
-				var query = new Parse.Query(TipObject);
-				query.save(
-							alarmId , {
-		  								success: function(alarm) {
 
-		  									alarm.set("alarmName",$("#alarmName").val(alarm.attributes.alarmName));
-		  									alarm.set("alarmTime", $("#alarmTime").val(alarm.attributes.alarmTime));
-											alarm.set("alarmRepeat", $("#alarmRepeat").val(alarm.attributes.alarmRepeat));
-											alarm.set("subwayRoute", $("#subwayRoute").val(alarm.attributes.subwayRoute));
-											alarm.set("timeAdjustment", $("#timeAdjustment").val(alarm.attributes.timeAdjustment));
-				/* var alarmName.set = $("#alarmName").val(alarm.attributes.alarmName);
-				var alarmTime.set = $("#alarmTime").val(alarm.attributes.alarmTime);
-				var alarmRepeat.set = $("#alarmRepeat").val(alarm.attributes.alarmRepeat);
-				var subwayRoute.set = $("#subwayRoute").val(alarm.attributes.subwayRoute);
-				var timeAdjustment.set = $("#timeAdjustment").val(alarm.attributes.timeAdjustment); */
-											alarm.save();
-											}
-										}
-							);
-			}
-			else {
-			document.write("reaching????");
-			var alarmName = $("#alarmName").val();
-			var alarmTime = $("#alarmTime").val();
-			var alarmRepeat = $("#alarmRepeat").val();
-			var subwayRoute = $("#subwayRoute").val();
-			var timeAdjustment = $("#timeAdjustment").val();
-			//TBD: Validation
-			var tip = new TipObject();
-			tip.save(
-						{
-							alarmName:alarmName,
-							alarmTime:alarmTime,
-							alarmRepeat:alarmRepeat,
-							subwayRoute:subwayRoute,
-							timeAdjustment:timeAdjustment,
-						}, {
-							success:function(object) {
-								document.location.href='index.html';
-								/*doAlert("Tip Saved!", function() {
-									document.location.href='index.html';
-								});*/
-							},
-							error:function(model, error) {
-								console.log("Error saving");
-							}
-					})			
-			}};
-};
-//});
-//});
+
+
 
