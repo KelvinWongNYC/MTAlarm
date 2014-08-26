@@ -15,37 +15,52 @@ $(document).on('ready', function() {
 				var alarmRepeat = $("#alarmRepeat").val(alarm.attributes.alarmRepeat);
 				var subwayRoute = $("#subwayRoute").val(alarm.attributes.subwayRoute);
 				var timeAdjustment = $("#timeAdjustment").val(alarm.attributes.timeAdjustment);
-				var addTipBtn = $("#addTipBtn").val("Save")
+			
 			}});
 
-/* DELETE ALARM
+/* Delete Alarm */
+
+ $("button").on("click",function() {
+	
 query.get(alarmId, {
   success: function(myObj) {
     // The object was retrieved successfully.
     myObj.destroy({});
+    alert("The alarm has been deleted!")
+
   },
   error: function(object, error) {
+  	console.log("No!")
     // The object was not retrieved successfully.
     // error is a Parse.Error with an error code and description.
   }
+})
 });	
-*/ 
 
-/* EDIT ALARM
 
-			query.find({
-  success: function(results) {
-    results[0].save({alarmName: "whateve"}),
-    results[0].save({alarmTime: "11:00"})
+/* EDIT ALARM */
 
-  },
+ $("#editAlarmform").on("submit", function(e) {
+e.preventDefault();
+
+query.find( {
+  	
+  	success: function(results) {
+    results[0].save({alarmName: $("#alarmName").val()});
+    results[0].save({alarmTime: $("#alarmTime").val()});
+    results[0].save({alarmRepeat: $("#alarmRepeat").val()});
+    results[0].save({subwayRoute: $("#subwayRoute").val()});
+    results[0].save({timeAdjustment: $("#timeAdjustment").val()});
+    alert("Changes saved!")
+
+
+  }, 
 
   error: function(error) {
     // error is an instance of Parse.Error.
-  }
+   }
+})
 });
-*/
-
 
 
 };		
@@ -56,7 +71,7 @@ query.get(alarmId, {
 				}
 				// Just adding a new alarm
 				else {
-				  document.location.href='add.html';
+				  
 				}
 });
 
