@@ -1,29 +1,18 @@
-
-
-//shows current day and time
-	//current time
-	var currentTime = new Date()
-	var hours = currentTime.getHours()
-	var minutes = currentTime.getMinutes()
-
-	if (minutes < 10)
-	minutes = "0" + minutes
-
-	var suffix = "AM";
-	if (hours >= 12) {
-	suffix = "PM";
-	hours = hours - 12;
-	}
-	if (hours == 0) {
-	hours = 12;
+	//shows current time
+	function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
 	}
 
-	//24 hr time
-	var hoursTwo = currentTime.getHours()
-	var minutesTwo = currentTime.getMinutes()
-	var Time = hoursTwo + ":" + minutesTwo
-
-	//current day
+	var currentTime = new Date();
+	var hours = addZero(currentTime.getHours());
+	var minutes = addZero(currentTime.getMinutes());
+	var currentTime = hours + ":" + minutes;		
+	console.log(currentTime);
+	
+	//shows current day
 	var d = new Date();
 	var weekday = new Array(7);
 	weekday[0]=  "Sunday";
@@ -33,13 +22,8 @@
 	weekday[4] = "Thursday";
 	weekday[5] = "Friday";
 	weekday[6] = "Saturday";
-	var n = weekday[d.getDay()];
-
-	var time = hours + ":" + minutes + " " + suffix
-	var timeAndday = n + " " + time
-
-	document.write(timeAndday)
-	
+	var currentDay = weekday[d.getDay()];
+	console.log(currentDay);
 
 //UserInput = Current Time
 	Parse.initialize("Lw0kdb5nOpnVv0LgkMonOYbChoc9RAsiv1oOOaOE", "dJV1Bj0ZQeZ1lAxaQ4nKx40vrU90818dUKfTLU9m");
@@ -47,25 +31,67 @@
 	var query = new Parse.Query(TipObject);
 	query.find({
 		success: function(alarms) {
-			//console.log(alarms);
-			/*var s = '';
-			for(var i=0, len=alarms.length; i<len; i++) {
-				var result = alarms[i];
-				console.dir(result);
-				s+= '<p>';
-				s+= '<b>ID:</b> '+ result.id + '<br/>';
-				s+= 'Created: ' + result.createdAt + '<br/>';
-				s+= 'Number of Cows: ' + result.attributes.numcows + '<br/>';
-				s+= 'How Dangerous?: ' + result.attributes.howdangerous + '<br/>';
-				s+= 'Comments: ' + result.attributes.comments;
-				s+= '</p>';
-			}
-			$("#tipdisplay").html(s); */
+			console.log(alarms);
 			alarms.forEach(function(alarm) {
-			var alarmTime = alarm.attributes.alarmTime 
-			if (alarmTime == Time) {
-				console.log("You coded a working alarm!")
+			 
+			var alarmTime = alarm.attributes.alarmTime;
+			
+			var subwayRoute = alarm.attributes.subwayRoute;
+			 for (var i = 0; i < alarm.attributes.subwayRoute.length; i++) {	
+				var subwayRoute = alarm.attributes.subwayRoute[i]
+				console.log(subwayRoute);
 			}
+
+			  for (var i = 0; i < alarm.attributes.alarmRepeat.length; i++) {	
+				var alarmRepeat = alarm.attributes.alarmRepeat[i]
+				console.log(alarmRepeat)} 
+
+			if (alarmRepeat == currentDay && alarmTime == currentTime) {
+						console.log("Hello");
+					} else {
+						console.log("Turn alarm off");
+					}
+
+			if (subwayRoute)		
+					
+			//array 
+			//var alarmRepeat = alarm.attributes.alarmRepeat;
+			//var name = alarmRepeat[2];
+
+		//if current time = alarmTime minus 1 hour
+
+		//if 7th ave == delayed, then minus whatever minutes from Parse from alarmTime, ring alarm
+		//if MTA == service change OR delay , then change alarm || else 
+		// if alarmTIme == Time and day of the week, then 
+		// if there is a delay that happens after set back time, just ring - as long as it is before 
+			
+			var MTAUrl = "http://web.mta.info/status/serviceStatus.txt";
+			var url    = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%20%3D%20'" + encodeURIComponent(MTAUrl) + "'%3B&format=json&callback=?";
+			$.getJSON(url, function(data) {
+			 console.log(data);
+			 var seventhAve = data.query.results.service.subway.line[0].status;
+			 var lexington = data.query.results.service.subway.line[1].status;
+			 var flushing = data.query.results.service.subway.line[2].status;
+			 var eigthAve = data.query.results.service.subway.line[3].status;
+			 var sixthAve = data.query.results.service.subway.line[4].status;
+			 var bklynQueensCrosstown = data.query.results.service.subway.line[5].status;
+			 var nassau = data.query.results.service.subway.line[6].status;
+			 var canarsie = data.query.results.service.subway.line[7].status;
+			 var broadway = data.query.results.service.subway.line[8].status;
+			 var shuttle = data.query.results.service.subway.line[9].status;
+			 //alert(seventhAve);
+			 // Relevant data is in data.query.results.service
+			})
+
+/* 
+			if (alarmTime == currentTime) {
+				console.log("You coded a working alarm!");
+				alert("Wake up!");
+
+			} else {
+				console.log("Don't wake up yet!");
+				//alert("Yay");
+			}	*/
 
 			}
 
@@ -74,7 +100,7 @@
 		},
 
 
-	}); 
+		}); 
 
 
 

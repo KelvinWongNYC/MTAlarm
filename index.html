@@ -8,8 +8,6 @@
 <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 <script src="js/alarm_test.js"></script>
-<script src="js/mtaData.js"></script>
-<link href="button.css" rel="stylesheet">
 
 </head>
 
@@ -60,6 +58,38 @@
 		
 
 		<a href="add.html" class="btn btn-block">Add Alarm</a>
+
+							 <audio id="myAudio">
+					  <source src="Playground.mp3" type="audio/mp3">
+					 
+					</audio>
+
+					<p>Click the buttons to play or pause the audio.</p>
+					<button onclick="playAudio()" type="button">Play Audio</button>
+					<script>
+					var x = document.getElementById("myAudio"); 
+
+					function playAudio() { 
+					    x.play(); 
+					}
+					</script> 
+ <!--
+					<audio id="xyz" src="Playground.mp3" preload="auto"></audio>
+
+					<script type="text/javascript">
+						if(true)
+										{
+						    document.getElementById('xyz').play();
+						    setTimeout(function(){alert("Extraction is finished");},2);
+						}
+
+					</script>-->
+
+
+
+
+
+
 
 
 

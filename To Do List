@@ -1,0 +1,25 @@
+get for each alarm
+find -- obtain what's inside each get ()
+
+get-find-dostuff
+
+while loop
+within while lopp -- if, else statement, sound something (10 sounds)
+checking the time to see if it sounds alarm
+
+1) how to sound an alarm
+2) check for particular time
+3) tie them together with time + event
+			
+
+			4) play sound 5 times + alert box
+
+5) incorperate the MTA data
+6) change the alarm based on the delay
+
+
+
+while (true) {
+	
+}
+
