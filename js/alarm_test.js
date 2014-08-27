@@ -52,7 +52,7 @@
 						console.log("Turn alarm off");
 					}
 
-			if (subwayRoute)		
+			//if (subwayRoute == )	
 					
 			//array 
 			//var alarmRepeat = alarm.attributes.alarmRepeat;
@@ -79,7 +79,7 @@
 			 var canarsie = data.query.results.service.subway.line[7].status;
 			 var broadway = data.query.results.service.subway.line[8].status;
 			 var shuttle = data.query.results.service.subway.line[9].status;
-			 //alert(seventhAve);
+			 
 			 // Relevant data is in data.query.results.service
 			})
 
