@@ -93,7 +93,11 @@
 			 var broadway = data.query.results.service.subway.line[8].status;
 			 var shuttle = data.query.results.service.subway.line[9].status;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			 //console.log(data.query.results.service.subway.line[0].text)
+=======
+			 
+>>>>>>> FETCH_HEAD
 =======
 			 
 >>>>>>> FETCH_HEAD
