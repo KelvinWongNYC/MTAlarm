@@ -50,33 +50,6 @@
 		success: function(alarms) {
 			//console.log(alarms);
 			alarms.forEach(function(alarm) {
-<<<<<<< HEAD
-=======
-			 
-			var alarmTime = alarm.attributes.alarmTime;
-			
-			var subwayRoute = alarm.attributes.subwayRoute;
-			 for (var i = 0; i < alarm.attributes.subwayRoute.length; i++) {	
-				var subwayRoute = alarm.attributes.subwayRoute[i]
-				console.log(subwayRoute);
-			}
-
-			  for (var i = 0; i < alarm.attributes.alarmRepeat.length; i++) {	
-				var alarmRepeat = alarm.attributes.alarmRepeat[i]
-				console.log(alarmRepeat)} 
-
-			if (alarmRepeat == currentDay && alarmTime == currentTime) {
-						console.log("Hello");
-					} else {
-						console.log("Turn alarm off");
-					}
-
-			//if (subwayRoute == )	
-					
-			//array 
-			//var alarmRepeat = alarm.attributes.alarmRepeat;
-			//var name = alarmRepeat[2];
->>>>>>> FETCH_HEAD
 
 			var MTAUrl = "http://web.mta.info/status/serviceStatus.txt";
 			var url    = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%20%3D%20'" + encodeURIComponent(MTAUrl) + "'%3B&format=json&callback=?";
@@ -92,15 +65,7 @@
 			 var canarsie = data.query.results.service.subway.line[7].status;
 			 var broadway = data.query.results.service.subway.line[8].status;
 			 var shuttle = data.query.results.service.subway.line[9].status;
-<<<<<<< HEAD
-<<<<<<< HEAD
 			 //console.log(data.query.results.service.subway.line[0].text)
-=======
-			 
->>>>>>> FETCH_HEAD
-=======
-			 
->>>>>>> FETCH_HEAD
 			 // Relevant data is in data.query.results.service
 
 				// have an array of the trains, 
