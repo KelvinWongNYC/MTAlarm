@@ -5,10 +5,11 @@ $(document).on('ready', function() {
 var query = new Parse.Query(TipObject);
 query.find({
 	success: function(alarms) {
-		console.log(alarms);
+		/* console.log(alarms); */
 
 		alarms.forEach(function(alarm) {
 			/* console.log(alarm.attributes.subwayRoute.length); */
+			
 			routelogos = ""
 			for (var i = 0; i < alarm.attributes.subwayRoute.length; i++) {
 				//routelogos = routelogos.concat("hellooooo");
@@ -16,19 +17,16 @@ query.find({
     		//console.log(alarm.attributes.subwayRoute.length);
     		}
 
+    		//for 
+    		/* console.log(routelogos); */	
     		
-    		/* console.log(routelogos); */
-
-
-    		
-		$("#placeToPutAlarm").append('<hr>'+ '<h1><a href="edit.html?id=' + alarm.id + '">'  + alarm.attributes.alarmName + '</a></h1>' + 
+		$("#placeToPutAlarm").append('<hr>'+'<h1><a href="edit.html?id=' + alarm.id + '">'  + alarm.attributes.alarmName + '</a></h1>' + 
 			'<p>' + '<h2>' + alarm.attributes.alarmTime  + '</h2>' +
 					'<br>' + alarm.attributes.alarmRepeat + 
 					'<br><h1>' + 'Subway Routes ' + 
 					routelogos +
 					//'<img src="subway/' + alarm.attributes.subwayRoute[0] + '.png">' + 
 					//'<img src="subway/' + alarm.attributes.subwayRoute[1] + '.png">' + 
-
 					'<br></h1>' + alarm.attributes.timeAdjustment + ' minutes' +
 					'</p>' 
 					);
